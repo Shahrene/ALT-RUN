@@ -1,6 +1,6 @@
 
 require 'sinatra'
-require 'activerecord'
+require 'active_record'
 
 require_relative 'db_config'
 
