@@ -1,0 +1,24 @@
+<h2>Search</h2>
+
+
+  <form action="/search" method="get">
+    <input placeholder="Search Name" type="text" name="userInput"/>
+    <input type="submit" name="" value="Search"/>
+  </form>
+
+  <form action="/search" method="get">
+    <input placeholder="Search City" type="text" name="userInput"/>
+    <input type="submit" name="" value="Search"/>
+  </form>
+
+<h3>Your search results</h3>
+  <div class="result">
+    <% if params["userInput"] && @result.length > 0 %>
+      <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.name %></a>
+      <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.city %></a>
+      <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.day_time %></a>
+    <% end %>
+    <% if params["userInput"] && @result.length == 0 %>
+      <p><%= "Sorry no groups exist" %></p>
+    <% end %>
+  </div>

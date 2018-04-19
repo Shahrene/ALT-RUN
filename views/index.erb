@@ -1,1 +1,15 @@
-<h1>hello world</h1>
+
+  <p>Not Registered? </p><a href="/signup">Sign Up Here</a>
+
+<main class="grid">
+  <% @groups.each do |group| %>
+    <article class="">
+      <p>
+        <a href="/groups/<%= group.id %>">
+          <%= group.name %>
+        </a>
+      </p>
+      <img src="<%= group.photo %>">
+    </article>
+  <% end %>
+</main>

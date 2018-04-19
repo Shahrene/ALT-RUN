@@ -2,10 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Alt Run</title>
+  <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Black+Ops+One|Faster+One|Metrophobic" rel="stylesheet">
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
+  <% if logged_in? %>
+<p>logged in as: <%= current_user.user_name %> </p>
+<form action="/session" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Logout</button>
+</form>
+<% end %>
+  <header>
+    <h1>ALT RUN    <span>Find your people and run</span></h1>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/group/new">Add Running Group</a>
+        <a href="/search">Search</a>
+        <a href="/login">Login</a>
+      </nav>
+  </header>
 
   <%= yield %>
 
