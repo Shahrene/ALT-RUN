@@ -59,16 +59,9 @@ post '/groups' do
   end
 end
 
-get '/save_image' do
-  erb :uploadimg
-end
-
-post '/save_image' do
-
-end
-
 get '/groups/:id' do
   @group = Group.find(params[:id])
+  @photo = @group.photo
   @city = @group.city
   @meeting_point = @group.meeting_point
   @day_time = @group.day_time
@@ -91,12 +84,9 @@ put '/groups/:id' do
   group.day_time = params[:day_time]
   group.contact = params[:contact]
   group.info = params[:info]
+  group.photo = params[:photo]
   group.save
   redirect to("/groups/#{params[:id]}")
-end
-
-get '/signup' do
-  erb :signup
 end
 
 get '/search' do
@@ -104,7 +94,25 @@ get '/search' do
     @search = '%' + params['userInput'] + '%'
     @result = Group.all.where("name ILIKE '#{@search}'")
   end
+  if params["userInputcity"]
+    @searchcity = '%' + params['userInputcity'] + '%'
+    @resultcity = Group.all.where("city ILIKE '#{@searchcity}'")
+  end
+  if params["userInputday"]
+    @searchday = '%' + params['userInputday'] + '%'
+    @resultday = Group.all.where("day_time ILIKE '#{@searchday}'")
+  end
   erb :search
+end
+
+get '/signup' do
+user = User.new
+user.user_name = params[:user_name]
+user.user_email = params[:user_email]
+user.password = params[:password_digest]
+user.save
+redirect to('/login')
+  erb :signup
 end
 
 get '/login' do

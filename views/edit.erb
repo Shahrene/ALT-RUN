@@ -1,24 +1,38 @@
-<form action="/groups/<%= @group.id %>" method="post">
-  <input type="hidden" name="_method" value="put">
+<h2>Edit Running Group</h2>
+<div class="update">
+  <form action="/groups/<%= @group.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <br>
 
-  <label for="">Name</label>
-    <input type="text" name="name" value="<%=@group.name %>">
+    <label for="">Name</label>
+      <input type="text" name="name" value="<%=@group.name %>">
+      <br>
 
-  <label for="">City</label>
-    <input type="text" name="meeting_point" value="<%=@group.city%>">
+    <label for="">City</label>
+      <input type="text" name="city" value="<%=@group.city%>">
+      <br>
 
-  <label for="">Meeting Point</label>
-    <input type="text" name="meeting_point" value="<%=@group.meeting_point%>">
+    <label for="">Meeting Point</label>
+      <input type="text" name="meeting_point" value="<%=@group.meeting_point%>">
+      <br>
 
-  <label for="">Day & Time</label>
-    <input type="text" name="day_time" value="<%=@group.day_time%>">
+    <label for="">Day & Time</label>
+      <input type="text" name="day_time" value="<%=@group.day_time%>">
+      <br>
 
-  <label for="">Contact</label>
-    <input type="text" name="contact" value="<%=@group.contact%>">
+    <label for="">Contact</label>
+      <input type="text" name="contact" value="<%=@group.contact%>">
+      <br>
 
-  <label for="">Info</label>
-    <input type="text" name="info" value="<%=@group.info%>">
+    <label for="">Info</label>
+      <input type="text" name="info" value="<%=@group.info%>">
+      <br>
 
-  <button>Update</button>
+    <label for="">Photo</label>
+      <input type="text" name="photo" value="<%=@group.photo%>">
+      <br>
 
-</form>
+    <button>Update</button>
+
+  </form>
+</div>

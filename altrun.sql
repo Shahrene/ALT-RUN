@@ -33,3 +33,8 @@ CREATE TABLE users (
 );
 
 UPDATE groups SET city = 'Melbourne', WHERE id = 1, 2;
+
+INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Runs With Dogs', 'Melbourne', 'Elsternwick Park', 'Sunday, 9-10am', 'Chloe', 'Doggy and leashes mandatory.');
+INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Drag Queen Racers', 'Sydney', 'Cremorne Point', 'Saturday, 10-11am', 'Andy & Fil', 'Heels optional. Join us for Brunch afterwards.');
+INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Track Titans', 'Brisbane', 'Queensland Sports & Aquatic Centre', 'Tuesday, 6-7pm', 'Steve & Georgina', 'Interval workout.');
+INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Run to Eat', 'Melbourne', 'Docklands', 'Wednesday 6.30-8pm', 'Amanda & Victor', '45 Minute run followed by gorging on burgers, pizza and burritos');

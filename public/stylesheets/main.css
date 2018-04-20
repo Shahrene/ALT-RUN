@@ -9,6 +9,15 @@
 
 article {
   flex-basis: 30%;
+  border: 1px solid lightgrey;
+  margin: 10px;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+
+article a {
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 2em;
 }
 
 h1 {
@@ -24,6 +33,8 @@ h1 {
 nav {
   display: flex;
   flex-wrap: wrap;
+  padding: 6px;
+  font-weight:
 }
 
 h2 {
@@ -45,6 +56,11 @@ label, input {
   font-family: 'Metrophobic', sans-serif;
   font-size: 1em;
   padding: 2px;
+}
+
+textarea {
+  font-family: 'Metrophobic', sans-serif;
+  font-size: 1em;
 }
 
 a {
@@ -70,4 +86,41 @@ td {
 button, input {
   cursor: pointer;
   padding: 6px;
+}
+
+
+.add label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+}
+
+.update label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+}
+
+.signup label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+}
+.login label {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+}
+
+.result {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 1px solid lightgrey;
+  width: 50%;
+  padding: 5px 0 10px 0;
+}
+
+.signuphere {
+  text-align: right;
+  margin-right: 100px;
 }

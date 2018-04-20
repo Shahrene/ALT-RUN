@@ -1,28 +1,38 @@
 
 <h2>Add A New Running Group</h2>
+<div class="add">
+  <form action="/groups" method="post">
 
-<form action="/group/" method="post">
+    <label for="">Group Name</label>
+      <input type="text" name="name">
+      <br>
 
-  <label for="">Group Name</label>
-    <input type="text" name="name">
+    <label for="">City</label>
+      <input type="text" name="city">
+      <br>
 
-  <label for="">City</label>
-    <input type="text" name="city">
+    <label for="">Meeting Point</label>
+      <input type="text" name="meeting_point">
+      <br>
 
-  <label for="">Meeting Point</label>
-    <input type="text" name="meeting_point">
+    <label for="">Day & Time</label>
+      <input type="text" name="day_time">
+      <br>
 
-  <label for="">Day & Time</label>
-    <input type="text" name="day_time">
+    <label for="">Contact</label>
+      <input type="text" name="contact">
+      <br>
 
-  <label for="">Contact</label>
-    <input type="text" name="contact">
+    <label for="">Link to Photo</label>
+      <input type="text" name="photo">
+      <br>
 
-  <label for="">Group Info</label>
-    <input type="text" name="info">
+    <label for="">Group Info</label>
+      <textarea name="info" rows="6" cols="40" wrap="soft"></textarea>
+      <br>
 
-  <a href="/save_image">Upload a photo of your group</a>
 
-  <button>Add Group</button>
+    <button>Add Group</button>
 
-</form>
+  </form>
+</div>
