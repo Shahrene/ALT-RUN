@@ -1,37 +1,43 @@
-<img src="<%= @group.photo %>" width=380px height=210px>
+<img src="<%= @group.photo %>" width=400px height=240px>
 
-<h2><%= @group.name%></h2>
+<div class="groupinfo">
 
-<table>
-  <tr>
-    <td>City:</td>
-    <td><%= @group.city%></td>
-  </tr>
-  <tr>
-    <td>Meeting Point:</td>
-    <td><%= @group.meeting_point%></td>
-  </tr>
-  <tr>
-    <td>Day & Time:</td>
-    <td><%= @group.day_time%></td>
-  </tr>
-  <tr>
-    <td>Contact:</td>
-    <td><%= @group.contact%></td>
-  </tr>
-  <tr>
-    <td>Information:</td>
-    <td><%= @group.info%></td>
-  </tr>
-</table>
+  <h2><%= @group.name%></h2>
 
-  <a href="/groups/<%= @group.id %>/edit">Edit</a>
+  <table>
+    <tr>
+      <td>City:</td>
+      <td><%= @group.city%></td>
+    </tr>
+    <tr>
+      <td>Meeting Point:</td>
+      <td><%= @group.meeting_point%></td>
+    </tr>
+    <tr>
+      <td>Day & Time:</td>
+      <td><%= @group.day_time%></td>
+    </tr>
+    <tr>
+      <td>Contact:</td>
+      <td><%= @group.contact%></td>
+    </tr>
+    <tr>
+      <td>Information:</td>
+      <td><%= @group.info%></td>
+    </tr>
+  </table>
 
 
-<h3>Group Messages</h3>
+    <% if logged_in? %>
+    <a href="/groups/<%= @group.id %>/edit"><b>Edit</b></a>
 
-  <form action="/messages" method="post">
-    <input type="hidden" name="group_id" value="<%= @group.id %>">
-    <textarea name="content"></textarea>
-    <button>Post</button>
-  </form>
+
+  <h3>Group Messages</h3>
+
+    <form action="/messages" method="post">
+      <input type="hidden" name="group_id" value="<%= @group.id %>">
+      <textarea name="content"></textarea>
+      <button>Post</button>
+    </form>
+    <% end %>
+</div>

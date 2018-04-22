@@ -1,38 +1,40 @@
-<h2>Edit Running Group</h2>
 <div class="update">
-  <form action="/groups/<%= @group.id %>" method="post">
-    <input type="hidden" name="_method" value="put">
-    <br>
+  <h2>Edit Running Group</h2>
 
-    <label for="">Name</label>
-      <input type="text" name="name" value="<%=@group.name %>">
+    <form action="/groups/<%= @group.id %>" method="post">
+
+      <input type="hidden" name="_method" value="put">
       <br>
 
-    <label for="">City</label>
-      <input type="text" name="city" value="<%=@group.city%>">
-      <br>
+      <label for="">Name</label>
+        <input type="text" name="name" value="<%=@group.name %>">
+        <br>
 
-    <label for="">Meeting Point</label>
-      <input type="text" name="meeting_point" value="<%=@group.meeting_point%>">
-      <br>
+      <label for="">City</label>
+        <input type="text" name="city" value="<%=@group.city%>">
+        <br>
 
-    <label for="">Day & Time</label>
-      <input type="text" name="day_time" value="<%=@group.day_time%>">
-      <br>
+      <label for="">Meeting Point</label>
+        <input type="text" name="meeting_point" value="<%=@group.meeting_point%>">
+        <br>
 
-    <label for="">Contact</label>
-      <input type="text" name="contact" value="<%=@group.contact%>">
-      <br>
+      <label for="">Day & Time</label>
+        <input type="text" name="day_time" value="<%=@group.day_time%>">
+        <br>
 
-    <label for="">Info</label>
-      <input type="text" name="info" value="<%=@group.info%>">
-      <br>
+      <label for="">Contact</label>
+        <input type="text" name="contact" value="<%=@group.contact%>">
+        <br>
 
-    <label for="">Photo</label>
-      <input type="text" name="photo" value="<%=@group.photo%>">
-      <br>
+      <label for="">Info</label>
+        <textarea name="info" rows="6" cols="40" wrap="soft" value="<%=@group.info%>"></textarea>
+        <br>
 
-    <button>Update</button>
+      <label for="">Photo</label>
+        <input type="text" name="photo" value="<%=@group.photo%>">
+        <br>
 
-  </form>
+      <button>Update</button>
+
+    </form>
 </div>

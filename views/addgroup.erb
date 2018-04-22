@@ -1,38 +1,37 @@
-
-<h2>Add A New Running Group</h2>
 <div class="add">
-  <form action="/groups" method="post">
+  <h2>Add A New Running Group</h2>
 
-    <label for="">Group Name</label>
-      <input type="text" name="name">
-      <br>
+    <form action="/groups" method="post">
 
-    <label for="">City</label>
-      <input type="text" name="city">
-      <br>
+      <label for="">Group Name</label>
+        <input placeholder="required" type="text" name="name">
+        <br>
 
-    <label for="">Meeting Point</label>
-      <input type="text" name="meeting_point">
-      <br>
+      <label for="">City</label>
+        <input placeholder="required" type="text" name="city">
+        <br>
 
-    <label for="">Day & Time</label>
-      <input type="text" name="day_time">
-      <br>
+      <label for="">Meeting Point</label>
+        <input placeholder="required" type="text" name="meeting_point">
+        <br>
 
-    <label for="">Contact</label>
-      <input type="text" name="contact">
-      <br>
+      <label for="">Day & Time</label>
+        <input placeholder="Day, start & end time"type="text" name="day_time">
+        <br>
 
-    <label for="">Link to Photo</label>
-      <input type="text" name="photo">
-      <br>
+      <label for="">Contact</label>
+        <input placeholder="Name, mobile number"type="text" name="contact">
+        <br>
 
-    <label for="">Group Info</label>
-      <textarea name="info" rows="6" cols="40" wrap="soft"></textarea>
-      <br>
+      <label for="">Link to Photo</label>
+        <input type="text" name="photo">
+        <br>
 
+      <label for="">Group Info</label>
+        <textarea placeholder="Please include any requirements, pace groups, following social activities" name="info" rows="6" cols="40" wrap="soft"></textarea>
+        <br>
+      <button>Add Group</button>
 
-    <button>Add Group</button>
+    </form>
 
-  </form>
 </div>

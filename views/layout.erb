@@ -7,23 +7,30 @@
   <link rel='stylesheet' href='/stylesheets/main.css'>
 </head>
 <body>
+<div class="loggedin">
   <% if logged_in? %>
-<p>logged in as: <%= current_user.user_name %> </p>
-<form action="/session" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>Logout</button>
-</form>
-<% end %>
+    <p>logged in as: <%= current_user.user_name %> </p>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+  <% end %>
+</div>
+
   <header>
-    <h1>ALT RUN    <span>Find your people and run</span></h1>
-      <nav>
+    <h1>ALT RUN <span>Find your people and run</span></h1>
+  </header>
+    <div class="nav">
+      <% if logged_in? %>
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/group/new">Add Running Group</a>
         <a href="/search">Search</a>
+      <% else %>
         <a href="/login">Login</a>
-      </nav>
-  </header>
+	     <% end %>
+    </div>
+
 
   <%= yield %>
 

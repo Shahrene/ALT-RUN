@@ -1,9 +1,9 @@
 
 require 'sinatra'
 require 'active_record'
-#require 'sinatra/reloader'
+require 'sinatra/reloader'
 require 'pg'
-#require 'pry'
+require 'pry'
 
 require_relative 'db_config'
 require_relative 'models/group'
@@ -19,7 +19,7 @@ helpers do
   end
 
   def logged_in?
-    current_user
+   current_user
   end
 end
 
@@ -106,12 +106,17 @@ get '/search' do
 end
 
 get '/signup' do
-user = User.new
-user.user_name = params[:user_name]
-user.user_email = params[:user_email]
-user.password = params[:password_digest]
-user.save
-redirect to('/login')
+  erb :signup
+end
+
+post '/signup' do
+  @user = User.new
+  @user.user_name = params[:user_name]
+  @user.user_email = params[:user_email]
+  @user.password = params[:password]
+  @user.save
+  session[:user_id] = @user.id
+    redirect to('/')
   erb :signup
 end
 
@@ -131,6 +136,7 @@ end
 
 delete '/session' do
   session[:user_id] = nil
+  redirect to('/')
 end
 
 get '/about' do

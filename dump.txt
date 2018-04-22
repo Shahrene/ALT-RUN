@@ -1,0 +1,1 @@
+heroku pg:backups:restore 'https://raw.githubusercontent.com/Shahrene/Project-2/master/db.dump' DATABASE_URL

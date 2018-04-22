@@ -1,8 +1,9 @@
-<h2>Search</h2>
 
+<article class="wrapper">
+<h2>Search</h2>
   <div class="search">
     <form action="/search" method="get">
-      <input placeholder="Search Name" type="text" name="userInput"/>
+      <input placeholder="Search Group Name" type="text" name="userInput"/>
       <input type="submit" name="" value="Search"/>
     </form>
 
@@ -22,7 +23,7 @@
       <% if params["userInput"] && @result.length > 0 %>
         <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.name %></a>
         <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.city %></a>
-        <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.day_time %></a>
+        <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.day_time %> - Visit Page</a>
       <% end %>
       <% if params["userInput"] && @result.length == 0 %>
         <p><%= "Sorry no groups exist" %></p>
@@ -30,7 +31,7 @@
       <% if params["userInputcity"] && @resultcity.length > 0 %>
         <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.name %></a>
         <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.city %></a>
-        <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.day_time %></a>
+        <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.day_time %> - Visit Page</a>
       <% end %>
       <% if params["userInputcity"] && @resultcity.length == 0 %>
         <p><%= "Sorry no groups exist" %></p>
@@ -38,7 +39,7 @@
       <% if params["userInputday"] && @resultday.length > 0 %>
         <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.name %></a>
         <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.city %></a>
-        <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.day_time %></a>
+        <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.day_time %> - Visit Page</a>
       <% end %>
       <% if params["userInputday"] && @resultday.length == 0 %>
         <p><%= "Sorry no groups exist" %></p>
@@ -47,3 +48,4 @@
   <form action="/search" method="get">
     <button>Refresh page</button>
   </form>
+</article>

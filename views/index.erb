@@ -1,11 +1,13 @@
 <div class="signuphere">
+  <% if !logged_in? %>
   <p>Not Registered? </p><a href="/signup">Sign Up Here</a>
+  <% end %>
 </div>
 
 
 <main class="grid">
   <% @groups.each do |group| %>
-    <article class="">
+    <article class="groups">
       <p>
         <a href="/groups/<%= group.id %>">
           <%= group.name %>
