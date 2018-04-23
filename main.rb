@@ -36,8 +36,7 @@ post '/messages' do
   message = Message.new
   message.group_id = params[:group_id]
   message.content = params[:content]
-  message.user_id = current_user
-  message.user_name = params[:user_name]
+  message.user_id = current_user.id
   message.save
   redirect to("/groups/#{ params[:group_id] }")
 end
@@ -60,6 +59,7 @@ post '/groups' do
 end
 
 get '/groups/:id' do
+
   @group = Group.find(params[:id])
   @photo = @group.photo
   @city = @group.city
@@ -92,15 +92,15 @@ end
 get '/search' do
   if params["userInput"]
     @search = '%' + params['userInput'] + '%'
-    @result = Group.all.where("name ILIKE '#{@search}'")
+    @result = Group.where("name ILIKE '#{@search}'")
   end
   if params["userInputcity"]
     @searchcity = '%' + params['userInputcity'] + '%'
-    @resultcity = Group.all.where("city ILIKE '#{@searchcity}'")
+    @resultcity = Group.where("city ILIKE '#{@searchcity}'")
   end
   if params["userInputday"]
     @searchday = '%' + params['userInputday'] + '%'
-    @resultday = Group.all.where("day_time ILIKE '#{@searchday}'")
+    @resultday = Group.where("day_time ILIKE '#{@searchday}'")
   end
   erb :search
 end
@@ -130,12 +130,17 @@ post '/session'  do
     session[:user_id] = user.id
     redirect to('/')
   else
-    erb :login
+    erb :loginfail
   end
 end
 
 delete '/session' do
   session[:user_id] = nil
+  redirect to('/')
+end
+
+delete '/groups' do
+  group = Group.delete( params[:id] )
   redirect to('/')
 end
 

@@ -35,6 +35,15 @@
         <br>
 
       <button>Update</button>
+      </form>
+      <br>
 
-    </form>
+      <form action="/groups" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" name="id" value="<%= @group.id %>">
+        <br>
+        <button>Delete</button>
+      </form>
+
+
 </div>

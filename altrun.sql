@@ -38,3 +38,5 @@ INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES (
 INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Drag Queen Racers', 'Sydney', 'Cremorne Point', 'Saturday, 10-11am', 'Andy & Fil', 'Heels optional. Join us for Brunch afterwards.');
 INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Track Titans', 'Brisbane', 'Queensland Sports & Aquatic Centre', 'Tuesday, 6-7pm', 'Steve & Georgina', 'Interval workout.');
 INSERT INTO groups (name, city, meeting_point, day_time, contact, info) VALUES ('Run to Eat', 'Melbourne', 'Docklands', 'Wednesday 6.30-8pm', 'Amanda & Victor', '45 Minute run followed by gorging on burgers, pizza and burritos');
+
+INSERT INTO messages (content, group_id, user_id) VALUES ('Lets go for Pizza after', 1, 1);

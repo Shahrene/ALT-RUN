@@ -1,6 +1,8 @@
 
-<article class="wrapper">
+<article class="searchwrap">
+
 <h2>Search</h2>
+
   <div class="search">
     <form action="/search" method="get">
       <input placeholder="Search Group Name" type="text" name="userInput"/>
@@ -21,29 +23,53 @@
   <div class="result">
     <h3>Your search results</h3>
       <% if params["userInput"] && @result.length > 0 %>
-        <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.name %></a>
-        <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.city %></a>
-        <a href='<%= "/groups/#{@result.first.id}" %>'><%= @result.first.day_time %> - Visit Page</a>
+        <% @result.each do |result| %>
+          <table>
+            <tr>
+              <td><a href='<%= "/groups/#{result.id}" %>'><%= result.name %></a></td>
+              <td><a href='<%= "/groups/#{result.id}" %>'><%= result.city %></a></td>
+              <td><a href='<%= "/groups/#{result.id}" %>'><%= result.day_time %></a></td>
+            <tr>
+          </table>
+          <br>
+        <% end %>
       <% end %>
       <% if params["userInput"] && @result.length == 0 %>
-        <p><%= "Sorry no groups exist" %></p>
-        <% end %>
+        <p><%= "Sorry, no groups exist" %></p>
+      <% end %>
+
       <% if params["userInputcity"] && @resultcity.length > 0 %>
-        <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.name %></a>
-        <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.city %></a>
-        <a href='<%= "/groups/#{@resultcity.first.id}" %>'><%= @resultcity.first.day_time %> - Visit Page</a>
+        <% @resultcity.each do |resultcity| %>
+          <table>
+            <tr>
+              <td><a href='<%= "/groups/#{resultcity.id}" %>'><%= resultcity.name %></a></td>
+              <td><a href='<%= "/groups/#{resultcity.id}" %>'><%= resultcity.city %></a></td>
+              <td><a href='<%= "/groups/#{resultcity.id}" %>'><%= resultcity.day_time %></a></td>
+            </tr>
+          </table>
+          <br>
+        <% end %>
       <% end %>
       <% if params["userInputcity"] && @resultcity.length == 0 %>
-        <p><%= "Sorry no groups exist" %></p>
+        <p><%= "Sorry, no groups exist" %></p>
       <% end %>
+
       <% if params["userInputday"] && @resultday.length > 0 %>
-        <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.name %></a>
-        <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.city %></a>
-        <a href='<%= "/groups/#{@resultday.first.id}" %>'><%= @resultday.first.day_time %> - Visit Page</a>
+        <% @resultday.each do |resultday| %>
+          <table>
+            <tr>
+              <td><a href='<%= "/groups/#{resultday.id}" %>'><%= resultday.name %></a></td>
+              <td><a href='<%= "/groups/#{resultday.id}" %>'><%= resultday.city %></a></td>
+              <td><a href='<%= "/groups/#{resultday.id}" %>'><%= resultday.day_time %></a></td>
+            </tr>
+          </table>
+          <br>
+        <% end %>
       <% end %>
       <% if params["userInputday"] && @resultday.length == 0 %>
-        <p><%= "Sorry no groups exist" %></p>
+        <p><%= "Sorry, no groups exist" %></p>
       <% end %>
+
   </div>
   <form action="/search" method="get">
     <button>Refresh page</button>

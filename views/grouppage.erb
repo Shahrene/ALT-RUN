@@ -29,15 +29,19 @@
 
 
     <% if logged_in? %>
-    <a href="/groups/<%= @group.id %>/edit"><b>Edit</b></a>
+      <a href="/groups/<%= @group.id %>/edit"><b>Edit</b></a>
 
 
-  <h3>Group Messages</h3>
+      <h3>Group Message Board</h3>
 
-    <form action="/messages" method="post">
-      <input type="hidden" name="group_id" value="<%= @group.id %>">
-      <textarea name="content"></textarea>
-      <button>Post</button>
-    </form>
+        <% @messages.each do |message| %>
+         <p><%= message.content %> - <%= message.user.user_name if message.user %></p>
+        <% end %>
+
+        <form action="/messages" method="post">
+          <input type="hidden" name="group_id" value="<%= @group.id %>">
+          <textarea name="content" rows="6" cols="40" wrap="soft"></textarea>
+          <button>Post</button>
+        </form>
     <% end %>
 </div>
