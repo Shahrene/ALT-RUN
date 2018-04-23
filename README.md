@@ -8,7 +8,7 @@ The idea behind this app came from finding that running groups often seem so inc
 
 There is a search function so if you are looking for a specific group by name, location or day of the week.
 
-A user must register and then be logged in before they can add or edit a group, however I have allowed anyone to be able to use the app to browse or search for groups.
+A user must register and then be logged in before they can add or edit a group, however I have allowed anyone to be able to use the app to browse the running groups.
 
 ## Tech Used
 

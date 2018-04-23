@@ -1,7 +1,7 @@
 
 require 'sinatra'
 require 'active_record'
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require 'pg'
 require 'pry'
 
@@ -59,7 +59,6 @@ post '/groups' do
 end
 
 get '/groups/:id' do
-
   @group = Group.find(params[:id])
   @photo = @group.photo
   @city = @group.city
