@@ -1,6 +1,6 @@
 # ALT RUN
 
-Access the Alt Run app on [Heroku](https://vast-woodland-42106.herokuapp.com/)
+Access the Alt Run app on [Heroku](https://alt-run-app.herokuapp.com/)
 
 ## Description
 
@@ -13,3 +13,7 @@ A user must register and then be logged in before they can add or edit a group, 
 ## Tech Used
 
 Alt Run uses Ruby in the Sinatra framework. The data is stored in a PostgresSQL database. It also employs Active Record from Rails which speaks to the database which removes the need to code SQL into the app.
+
+![Game1](AltRunScreenshot1.png)
+
+![Game](AltRunScreenshot2.png)

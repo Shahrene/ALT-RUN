@@ -81,6 +81,7 @@ label, input {
 textarea {
   font-family: 'Metrophobic', sans-serif;
   font-size: 1em;
+  position: relative;
 }
 
 a {
@@ -100,7 +101,7 @@ a:hover {
 
 table {
   table-layout: fixed;
-  width: 600px;
+  width: 560px;
 }
 
 td {

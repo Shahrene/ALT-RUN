@@ -89,16 +89,16 @@ put '/groups/:id' do
 end
 
 get '/search' do
-  if params["userInput"]
-    @search = '%' + params['userInput'] + '%'
-    @result = Group.where("name ILIKE '#{@search}'")
+  if params["userInputName"]
+    @searchname = '%' + params['userInputName'] + '%'
+    @resultname = Group.where("name ILIKE '#{@searchname}'")
   end
-  if params["userInputcity"]
-    @searchcity = '%' + params['userInputcity'] + '%'
+  if params["userInputCity"]
+    @searchcity = '%' + params['userInputCity'] + '%'
     @resultcity = Group.where("city ILIKE '#{@searchcity}'")
   end
-  if params["userInputday"]
-    @searchday = '%' + params['userInputday'] + '%'
+  if params["userInputDay"]
+    @searchday = '%' + params['userInputDay'] + '%'
     @resultday = Group.where("day_time ILIKE '#{@searchday}'")
   end
   erb :search
